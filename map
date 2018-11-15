@@ -1,0 +1,27 @@
+package examTest;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class HashMapTest {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String str = "";
+		System.out.println("请输入一个字符串：");
+		str = scanner.nextLine();
+		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		for (int i = 0; i < str.length(); i++) {
+			char c = str.charAt(i);// 用toCharArray()也可以
+			if (map.containsKey(c)) {// 若统计过
+				map.put(c, map.get(c) + 1);
+			} else {
+				map.put(c, 1);
+			}
+		}
+		scanner.close();
+		System.out.println(map);
+	}
+	
+}
